@@ -27,3 +27,8 @@ How do I run this project locally?
 
 ### 5. And open 127.0.0.1:8000
     login to the webapplication with the credentials of superuser created in the above step. 
+
+# If there are problem while cloning or downloding
+    Kindly download the todo_app.zip and extract the folder and perform the steps from step 2.
+    
+ # Thank You
