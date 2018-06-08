@@ -7,7 +7,11 @@ This Django projet was created for a test.
 The project is a To-Do web application.
 Once login user can  add a task, edit task added by him, view all the tasks added by all the users, delete tasks added by him.
 
-How do I run this project locally?
+# How do I run this project locally?
+
+# Requirements(Versions I used):
+Django 2.0.6
+Python 3.6.3
 
 ### 1. Clone the repository:
 
