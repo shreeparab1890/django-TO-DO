@@ -118,3 +118,40 @@ def delete(request,task_id):
 
 
     return render(request, 'task/index.html', context)
+
+
+def mark_done(request,task_id):
+	if request.user.is_authenticated:
+		user = request.user
+	u_id = user.id
+	t_list = list(task.objects.filter(id=task_id))
+	for t in t_list:
+		if u_id == t.user.id:
+			t.status = True
+			t.save()
+		else:
+			all_task = task.objects.all()
+			error_msg = "You Are Not Authorized To Mark Done This Task"
+			context = {
+				'all_task': all_task,
+				'user':user,
+				'error_msg':error_msg,
+			}
+			return render(request, 'task/index.html', context)
+	all_task = task.objects.all()
+	context = {
+		'all_task': all_task,
+		'user':user,
+	}
+	return render(request, 'task/index.html', context)
+
+def hide_done(request):
+	if request.user.is_authenticated:
+		user = request.user
+
+	all_task = task.objects.filter(status=False)
+	context = {
+		'all_task': all_task,
+		'user':user,
+	}
+	return render(request, 'task/index.html', context)
