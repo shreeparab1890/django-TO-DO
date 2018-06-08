@@ -35,6 +35,7 @@
                         <td>{{ task.user.id }}</td>
                         <td><a href="/task/edit/{{ task.id }}" ><input type="button" value="EDIT"></a> &nbsp;
                             <a href="/task/delete/{{ task.id }}" ><input type="button" value="DELETE"></a>
+                            <a href="/task/mark_done/{{ task.id }}" ><input type="button" value="MARK DONE"></a>
 
 
                         </td>
@@ -44,7 +45,7 @@
                 {% endfor %}
         </table>
         </div>
-        <div class="col-md-3"></div>
+        <div class="col-md-3"><a href="/task/hide_done" ><input type="button" value="HIDE DONE"></a></div>
     </div>
     {% if error_msg %}
             <center><div class="row">
@@ -55,7 +56,7 @@
     {% endif %}
 
 {% else %}
-	<h2>you dont have any albums</h2>
+	<h2>you dont have any Tasks</h2>
 {% endif %}
 
 {% endblock %}
